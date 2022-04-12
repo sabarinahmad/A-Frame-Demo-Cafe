@@ -1,0 +1,99 @@
+   
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Game Store</title>
+    <meta name="A store for game equipments" content="Game store"></meta>
+    <script src="https://aframe.io/releases/1.2.0/aframe.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      
+      <a-assets>
+        <img id="wallpaper-inside" src="wallpaper-inside.png">
+        <img id="wallpaper-outside" src="wallpaper-outside.png">
+        
+        <img crossorigin="anonymous" id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img crossorigin="anonymous" id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
+        
+        <!-- DECOR -->
+        <a-asset-item id="plant" src="./entity/plant/scene.gltf"></a-asset-item>  
+        <!-- <a-asset-item id="kallax_77x147" src="./entity/kallax_77x147/scene.gltf"></a-asset-item>    -->
+        <a-asset-item id="sofa_pink" src="./entity/sofa_pink/scene.gltf"></a-asset-item>   
+        <a-asset-item id="bar_table" src="./entity/bar_table/scene.gltf"></a-asset-item>   
+        <a-asset-item id="pub_bar_rose_gold_metal_stool__wood_top_1" src="./entity/pub_bar_rose_gold_metal_stool__wood_top/scene.gltf"></a-asset-item>  
+        <a-asset-item id="pub_bar_rose_gold_metal_stool__wood_top_2" src="./entity/pub_bar_rose_gold_metal_stool__wood_top/scene.gltf"></a-asset-item>  
+        <a-asset-item id="pub_bar_rose_gold_metal_stool__wood_top_3" src="./entity/pub_bar_rose_gold_metal_stool__wood_top/scene.gltf"></a-asset-item>  
+        <a-asset-item id="kitchen_cabinet_at_corner" src="./entity/kitchen_cabinet_at_corner/scene.gltf"></a-asset-item>  
+        <a-asset-item id="the_display_rack_1" src="./entity/the_display_rack/scene.gltf"></a-asset-item>  
+        <a-asset-item id="the_display_rack_2" src="./entity/the_display_rack/scene.gltf"></a-asset-item>  
+        <a-asset-item id="the_display_rack_3" src="./entity/the_display_rack/scene.gltf"></a-asset-item>  
+        <!-- <a-asset-item id="kitchen_cabinet_at_corner" src="./entity/kitchen_cabinet_at_corner/scene.gltf"></a-asset-item>  -->
+
+
+      </a-assets>
+      
+        <!-- DECOR -->
+        <a-entity id='plant' scale="1.5 1.5 1.5" position="-1.7 0 2.7" rotation="0 0 0" gltf-model="#plant" ></a-entity>    
+        <!-- <a-entity id='kallax_77x147' scale="0.015 0.015 0.015" position="-1 0 -3" rotation="90 0 0" gltf-model="#kallax_77x147" ></a-entity> -->
+        <a-entity id='sofa_pink' scale="0.0008 0.0008 0.0008" position="-2.35 0.15 2.2" rotation="0 90 0" gltf-model="#sofa_pink" ></a-entity>
+        <a-entity id='bar_table' scale="1 1 0.6" position="-3.0 0.095 -1.7" rotation="0 0 0" gltf-model="#bar_table" ></a-entity>
+        <a-entity id='model_pub_bar_rose_gold_metal_stool__wood_top_1' scale="1 1 1" position="-2.535 0 -0.9" rotation="0 0 0" gltf-model="#pub_bar_rose_gold_metal_stool__wood_top_1" ></a-entity>
+        <a-entity id='model_pub_bar_rose_gold_metal_stool__wood_top_2' scale="1 1 1" position="-2.535 0 -1.7" rotation="0 0 0" gltf-model="#pub_bar_rose_gold_metal_stool__wood_top_2" ></a-entity>
+        <a-entity id='model_pub_bar_rose_gold_metal_stool__wood_top_3' scale="1 1 1" position="-2.535 0 -2.5" rotation="0 0 0" gltf-model="#pub_bar_rose_gold_metal_stool__wood_top_3" ></a-entity>
+        <a-entity id='model_kitchen_cabinet_at_corner' scale="0.8 1 0.8" position="0.6 0 -2.35" rotation="0 90 0" gltf-model="#kitchen_cabinet_at_corner" ></a-entity>
+        <a-entity id='model_the_display_rack_1' scale="0.8 0.6 0.6" position="2.2 0 2.8" rotation="0 180 0" gltf-model="#the_display_rack_1" ></a-entity>
+        <a-entity id='model_the_display_rack_2' scale="0.8 0.6 0.6" position="2.7 0 1.5" rotation="0 -90 0" gltf-model="#the_display_rack_2" ></a-entity>
+        <a-entity id='model_the_display_rack_3' scale="0.8 0.6 0.6" position="2.7 0 0.4" rotation="0 -90 0" gltf-model="#the_display_rack_3" ></a-entity>
+        <!-- <a-entity id='bar_table' scale="1 1 0.6" position="-3.0 0.095 -1.7" rotation="0 0 0" gltf-model="#bar_table" ></a-entity> -->
+
+        
+
+
+      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048" segments-height="5" segments-width="8"></a-sky>
+      <a-plane src="#groundTexture" rotation="-90 0 0" position="0 -0.01 0" height="100" width="100"></a-plane>
+      
+      <rw-room id="roomA" position="-3 0 -3" width="6" length="6" height="3">
+        <rw-wall material="src:#wallpaper-inside; repeat:0.3 0.3;"></rw-wall>
+        <rw-wall material="src:#wallpaper-inside; repeat:0.3 0.3;"></rw-wall>
+        <rw-wall material="src:#wallpaper-inside; repeat:0.3 0.3;">
+          <rw-doorhole id="frontInner"></rw-doorhole>
+        </rw-wall>
+        <rw-wall material="src:#wallpaper-inside; repeat:0.5 0.5;"></rw-wall>
+        
+        <rw-floor material="color:#F88"></rw-floor>
+        <rw-ceiling material="color:#AAA"></rw-ceiling>
+      </rw-room>
+      
+      <rw-room id="outerRoom" position="0 0 0" outside="true" material="src:#wallpaper-outside; repeat:0.5 0.5;">
+        <rw-wall position="-3 0 -3" height="3"></rw-wall>
+        <rw-wall position=" 3 0 -3" height="3"></rw-wall>
+        <rw-wall position=" 3 0  3" height="3"></rw-wall>
+        <rw-wall position="-3 0  3" height="3">
+          <rw-doorhole id="frontOuter"></rw-doorhole>
+          <rw-doorlink from="#frontInner" to="#frontOuter" material="color:#FFF" position="3 0 0" width=3>   
+            <rw-floor></rw-floor>
+            <rw-ceiling></rw-ceiling>
+            <rw-sides></rw-sides>
+          </rw-doorlink>
+        </rw-wall>
+      </rw-room>
+
+      <!-- CONSTANT -------------------------------------------------------------------------------------------------------------------------->
+            <!-- Camera controls -->
+            <a-entity position="0 1.7 7">
+                <a-entity camera look-controls wasd-controls>
+                </a-entity>
+            </a-entity>
+
+            
+    </a-scene>
+
+
+
+
+    
+  </body>
+</html>
